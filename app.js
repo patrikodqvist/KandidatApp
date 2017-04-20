@@ -1,4 +1,4 @@
-var kolCalc = angular.module('kolCalc', ['ngRoute','ngResource', 'zingchart-angularjs', 'ngCookies', 'ngPapaParse']);
+var kolCalc = angular.module('kolCalc', ['ngResource', 'zingchart-angularjs', 'ngCookies', 'ngPapaParse']);
 
 
 kolCalc.config(['$routeProvider',
