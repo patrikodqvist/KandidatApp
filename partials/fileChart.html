@@ -1,0 +1,31 @@
+<div class="row" id="detaljRader" ng-controller="fileChart">
+	<div class="col-md-3">
+		<div class="row">
+			<img id="header-picture" src="https://people.kth.se/~hsan/surf_files/kth_rgb.jpg">
+		</div>
+		<div class="row" style="padding-top: 1em;">
+			<a href='#!/filecharts' ng-click="changeState()"><h3>Översikt</h3></a>
+		</div>
+
+		<div class="row" style="padding-top: 1em; padding-bottom: 1em;">
+			<h4>Enheter:</h4>
+		</div>
+
+		<div class="row" ng-repeat="enhet in list">
+			<li><a ng-href='#!/detaljvy/{{enhet.name}}' ng-click="changeState()">{{enhet.name}}</a></li>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="row">
+			<h1>Upphandlingens totala C02 utsläpp: {{utslapp}}g Koldioxid</h1>
+		</div>
+
+		<hr></hr>
+
+		<div class="row" id="ringbar"></div>
+	</div>
+	<div class="col-md-1">
+		<a href='#!/home' ng-click="changeState()"><span id="home" class="glyphicon glyphicon-home"></span></a>
+	</div>
+</div>		
+

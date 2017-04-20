@@ -1,0 +1,83 @@
+body {
+	font-family: futura;
+}
+#searchList {
+	overflow-y:scroll;
+	padding-bottom: 5em;
+	margin-bottom: 10em;
+}
+
+#searchbar {
+	margin-bottom: 1em;
+}
+
+#header {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	height: auto;
+	border-bottom: 1px solid black
+}
+#header-picture {
+	height: 8em;
+}
+
+#header-title {
+	padding-left: 4em;
+}
+
+#filebox {
+	margin-top: 5em;
+	margin-right: auto;
+	margin-left: auto;
+	width: 80em;
+	height: 35em;	
+	background-color: grey;
+	padding-left: 5em;
+
+}
+
+#footer {
+	background-color: grey;
+	height: 8em;
+	width: 100%;
+	margin-right: 0em;
+	margin-left: 0em;	
+	margin-top: 10em;
+	padding-left: 5em;
+	padding-top: 2em;
+	margin-bottom: 0em;
+	position: fixed;
+	bottom: 0em;		
+}
+
+.row {
+	padding-left: 1em;
+	margin-right: 0em;
+	margin-left: 0em;
+}
+
+a {
+	color: black;
+}
+
+
+#barCharttwo{
+  height: 100%;
+  width: 100%;
+}
+
+#detailView{
+	padding-top: 5em;
+}
+
+#detaljRader{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+#home {
+	font-size: 2em;
+}
+
+
+

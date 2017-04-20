@@ -1,0 +1,75 @@
+<div class="row" ng-controller="chartCalc">
+	<div class="col-md-4">
+		<div class="row" style="padding-top: 2em;">
+			<img id="header-picture" src="https://people.kth.se/~hsan/surf_files/kth_rgb.jpg">
+		</div>
+		<div class="row" style="padding-top: 1em; padding-bottom: 1em;">
+			<h4>Ingredienser</h4>
+		</div>
+		<div class="row" ng-repeat="result in List()">
+			<div class="col-md-4">
+				{{result.name}}
+			</div>
+			<div class="col-md-4">
+				C02: {{result.carbon.average}}g
+			</div>
+			<div class="col-md-3">
+				{{result.amount}}{{result.unit}}
+			</div>
+			<div class="col-md-1">
+				<a ng-click="removeItem(result.id, result)">
+					<span id="home" class="glyphicon glyphicon-remove"></span>
+				</a>
+			</div>
+		</div>
+		<hr></hr>
+		<div class="row" style="padding-top:1em;">
+		 	
+			<a href='#!/calc'>
+				<button type="button" class="btn btn-primary" ng-click="installCategories()">Redigera ingredienserna</button>
+			</a>
+		</div>
+	</div>
+	<div class="col-md-7" style="text-align: left;">
+		<div class="row">
+			<h1>Ditt Totala C02 Utsläpp: {{getCol()}}g Koldioxid</h1>
+		</div>
+
+		<div class="row" id="detailView" style="padding-right: 25%;">
+			<p>
+			Nedan kommer alla ingredienser skrivas ut i diagram för att visualisera dess miljöpåverkan. Det kommer även delas in i mat-kategorier för att visa hur mycket de olika grupperna står för. 
+			</p>
+		</div>
+
+		<div class="row" ng-controller="chartCalc" id="detailView">
+			<zingchart id="barCharttwo" zc-json="BarChartSettingstwo"></zingchart>
+		</div>
+
+		<div class="row" ng-controller="chartCalc" id="detailView">
+			<zingchart id="ringChart" zc-json="ringChartSettings"></zingchart>
+		</div>
+
+		<div class="row" ng-controller="chartCalc" id="detailView">
+			<zingchart id="barChart" zc-json="BarChartSettings"></zingchart>
+		</div>
+
+		<div class="row" id="detailView" style="padding-right: 25%;">
+			<p>
+				Resultaten för all visualisering bygger på data från databasen lcafdb.org. Databasen är ett forskningsprojekt vars syfte har varit att tag fram genomsnittet av koldixidutsläpp per livsmedelsvara. Därför ska dessa siffror tas med en nypa salt och enbart användas som riktmärken istället för tvär vetenskap.
+
+				/Team TSS
+			</p>
+		</div>
+	</div>
+
+	<div class="col-md-1" style="padding-top:2em;">
+		<a href='#!/home'><span id="home" class="glyphicon glyphicon-home"></span></a>
+	</div>
+</div>
+
+<!--Footern-->
+<div class="row" style="background-color: grey; height: 8em; margin-top: 5em;">
+	<a href='#!/studie'><h4>Om vår studie</h4></a>
+	<a href='#!/omOss'><h4>Om oss</h4></a>
+</div>
+

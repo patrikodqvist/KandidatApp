@@ -1,0 +1,90 @@
+<div class="row" ng-controller="inputCalc" style="padding-left: 2em; padding-top: 2em;">
+	<!--Koldioxidsidan-->
+	<div class="col-md-4">
+
+		<div class="row">
+			<img id="header-picture" src="https://people.kth.se/~hsan/surf_files/kth_rgb.jpg">
+		</div>
+
+		<div class="row" style="padding-top: 1.85em;">
+			<div class="col-md-9">
+				<h4>Ingredienslistan</h4>
+			</div>
+		</div>
+		<div class="row" ng-repeat="result in List()">
+			<div class="col-md-4">
+				{{result.name}}
+			</div>
+			<div class="col-md-4">
+				C02: {{result.carbon.average}}g
+			</div>
+			<div class="col-md-3">
+				{{result.amount}}{{result.unit}}
+			</div>
+			<div class="col-md-1">
+				<a ng-click="removeItem(result.id)">
+					<span id="home" class="glyphicon glyphicon-remove"></span>
+				</a>
+			</div>
+		</div>
+		<hr></hr>
+		<div class="row">
+			<div class="col-md-4">
+				<a href='#!/charts'>
+					<button type="button" class="btn btn-primary" ng-click="categoryList()"">Forsätt</button>
+				</a>
+			</div>
+			<div class="col-md-8" style="padding-left: 0em; text-align: left; ">
+				Total C02: {{calcTotalCo2()}}g
+			</div>
+		</div>
+	</div>
+	<!--End-->
+
+	<!--Input sidan-->
+	<div class="col-md-7" id="searchList">
+		<div class="row" id="searchbar">
+			<h1>Skriv in era livsmedel</h1>
+		</div>
+		<div class="row">
+			<form ng-submit="search(name)">
+				<input ng-model="name" style="border: 2px solid black; outline: none; height: 2.3em; margin: 0em; border-radius: 7px;">
+				<button type="button" class="btn btn-primary" style="margin: 0em; height: 2.3em;"" ng-click="search(name)">Sök</button>
+			</form>
+		</div>
+		<div class="row" style="padding-bottom: 2em;">
+			<h4>{{status}}</h4>
+		</div>
+		<div class="row" ng-repeat="result in searchResults" id="detaljvy">
+			<div class="container-fluid">
+				<div class="col-md-2">
+					{{result.name}}
+				</div>
+
+				<div class="col-md-2" style="padding-right: 3em;">
+					<input ng-model="amount" placeholder="Mängd" style="border: 2px solid black; outline: none; border-radius: 7px;">
+				</div>
+				
+				<div class="col-md-2" style="padding-left: 3em;">
+					<select ng-model="unit" style="border: 2px solid black; outline: none;">
+						<option value="" disabled selected hidden>Enhet</option>
+						<option value='gram'>g</option>
+						<option value='ml'>ml</option>
+					</select>
+				</div>
+				
+
+				<div class="col-md-2">
+					<a ng-click="ingCalculate(result.id, amount, unit,result.category)"><span id="home" class="glyphicon glyphicon-check"></span></a>
+				</div>
+			</div>
+			<hr></hr>
+		</div>
+		
+	</div>
+	<!--End-->
+	<div class="col-md-1">
+		<a href='#!/home'><span id="home" class="glyphicon glyphicon-home"></span></a>
+	</div>
+	
+</div>

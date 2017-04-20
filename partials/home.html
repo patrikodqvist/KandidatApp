@@ -1,0 +1,43 @@
+<div class="row" ng-controller="homeCtrl" style="padding-top: 2em;">
+	<div class="col-md-3">
+		<div class="row">
+			<a href='#!/start'><img id="header-picture" src="https://people.kth.se/~hsan/surf_files/kth_rgb.jpg"></a>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="row">
+			<h1>Kalkylator</h1>
+		</div>
+		<div class="row" ng-repeat="item in kalkylator">
+			<div class="col-md-4">
+				{{item.name}}
+			</div>
+			<div class="col-md-4">
+				C02: {{item.carbon.average}}g
+			</div>
+			<div class="col-md-3">
+				{{item.amount}}{{item.unit}}
+			</div>
+		</div>
+		<hr></hr>
+		<div class="row" style="padding-top:1em;">
+			<a href='#!/calc'>
+				<button type="button" class="btn btn-primary" ng-click="changeState()">Fortsätta dina kalkyleringar</button>
+			</a>
+		</div>
+		<hr></hr>
+		<div class="row">
+			<h1>Filuppladdning</h1>
+		</div>
+		<div class="row">
+			<p>Uppladdad fil:</p>
+			<p>{{filename}}</p>
+		</div>
+		<div class="row">
+			<a href='#!/filecharts'>
+				<button type="button" class="btn btn-primary" ng-click="changeState()">Fortsätta med {{filename}}</button>
+			</a>
+		</div>
+		<hr></hr>
+	</div>
+</div>

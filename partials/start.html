@@ -1,0 +1,27 @@
+<!--Headern-->
+<div class="row" id="header">
+	<div class="col-md-10" id="header-title">
+		<h1>Kandidatarbete Medieteknik KTH: Koldioxid Kalkylator</h1>
+	</div>
+	<div class="col-md-2">
+		<img id="header-picture" src="https://people.kth.se/~hsan/surf_files/kth_rgb.jpg">
+	</div>
+</div>
+
+<!--Innehållet-->
+<div class="row"  ng-controller="FileUpload">
+	<div class="container" id="filebox">
+		<h1>Välkommen</h1>
+		<h3>Ladda upp er upphandlingsplan så kalkylerar vi fram handlingens totala koldioxidutsläpp</h3>
+		<input  ng-model="file" type="file"  id="myFile">Uppload file</input>
+		<a href='#!/filecharts'><button  ng-click="readFile()">Kalkylera filen</button></a>
+		<h3>Eller beräkna för hand genom vårt beräkningsverktyg</h3>
+		<a href='#!/calc'><button ng-click="installCategories()">Kalkylera själv</button></a>
+	</div>
+</div>
+
+<!--Footern-->
+<div class="row" id="footer">
+	<a href='#!/studie'><h4>Om vår studie</h4></a>
+	<a href='#!/omOss'><h4>Om oss</h4></a>
+</div>

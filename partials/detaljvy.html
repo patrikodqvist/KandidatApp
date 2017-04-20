@@ -1,0 +1,57 @@
+<div class="row">
+	<div class="col-md-3" style="padding-top:2em;">
+		<div class="row">
+			<img id="header-picture" src="https://people.kth.se/~hsan/surf_files/kth_rgb.jpg">
+		</div>
+		<div class="row" style="padding-top: 1em;">
+			<a href='#!/filecharts' ng-click="changeState()"><h3>Översikt</h3></a>
+		</div>
+
+		<div class="row" style="padding-top: 1em; padding-bottom: 1em;">
+			<h4>Enheter:</h4>
+		</div>
+
+		<div class="row" ng-repeat="enhet in list">
+			<li><a ng-href='#!/detaljvy/{{enhet.name}}' ng-click="changeState()">{{enhet.name}}</a></li>
+		</div>
+	</div>
+	<div class="col-md-8" style="text-align: left;">
+		<div class="row">
+			<p><h1>{{enhet}}s</h1></p> 
+			<p><h3>totala C02 Utsläpp: {{TotUt}}g Koldioxid</h3></p>
+			<p>
+				Nedan kommer alla ingredienser skrivas ut i diagram för att visualisera dess miljöpåverkan. Det kommer även delas in i mat-kategorier för att visa hur mycket de olika grupperna står för. 
+			</p>
+		</div>
+		<hr></hr>
+
+		<div class="row" ng-controller="detaljVy">
+			<div id="hBar"></div>
+			<hr></hr>
+		</div>
+
+		<div class="row" ng-controller="detaljVy">
+			<div id="ringBar"></div>
+			<hr></hr>
+
+		</div>
+
+		<div class="row" id="detailView" style="margin: 0em; margin-bottom: 25em; text-align: left; padding-left: 0em;" ng-controller="detaljVy">
+			<p>
+				Resultaten för all visualisering bygger på data från databasen lcafdb.org. Databasen är ett forskningsprojekt vars syfte har varit att tag fram genomsnittet av koldixidutsläpp per livsmedelsvara. Därför ska dessa siffror tas med en nypa salt och enbart användas som riktmärken istället för tvär vetenskap.
+
+				/Team TSS
+			</p>
+		</div>
+
+	</div>
+	<div class="col-md-1" style="padding-top:2em;">
+		<div class="row" style="padding-bottom:2em;">
+			<a href='#!/home'><span id="home" class="glyphicon glyphicon-home"></span></a>
+		</div>
+	</div>
+
+</div>
+
+
+
