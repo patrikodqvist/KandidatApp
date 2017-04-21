@@ -133,22 +133,22 @@ kolCalc.factory('calc', function($resource, $cookieStore, Papa) {
 
 
 	//Sökningen i Apit
-	this.getIngredient = $resource('https://lcafdb.org/api/ingredients?search=:name',{}, {
+	this.getIngredient = $resource('http://lcafdb.org/api/ingredients?search=:name',{}, {
 		get:{}
 	});
 
 	//Sökningen i Apit med id
-	this.getIngredientId = $resource('https://lcafdb.org/api/ingredients/:id',{}, {
+	this.getIngredientId = $resource('http://lcafdb.org/api/ingredients/:id',{}, {
 		get:{}
 	});
 
 	//Calculering av ingrediens
-	this.calcIng = $resource('https://lcafdb.org/api/func/calculate?ingredient=:id&amount=:amount&unit=:unit',{}, {
+	this.calcIng = $resource('http://lcafdb.org/api/func/calculate?ingredient=:id&amount=:amount&unit=:unit',{}, {
 		get:{}
 	});
 
 	//Hämtar ett Items Kategori
-	this.getCategory = $resource('https://lcafdb.org/api/categories',{},{
+	this.getCategory = $resource('http://lcafdb.org/api/categories',{},{
 		get: {}
 	});
 
